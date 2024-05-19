@@ -1,0 +1,45 @@
+<?php 
+    // echo '<pre>';
+    // print_r($this->view->carrinho);
+    // echo '</pre>';
+
+   if(isset($_GET['resposta'])){
+        echo $_GET['resposta'];
+   } 
+?>
+
+<table class="tabela-produtos">
+    <thead>
+        <th>nome</th>
+        <th>preço</th>
+        <th>quantidade</th>
+        <th></th>
+        <th>subtotal R$</th>
+    </thead>
+    <tbody>
+       
+        <?foreach($this->view->carrinho as $id => $produto){?>
+
+            <tr>
+                <td><?= $produto['nome'] ?></td>
+                <td><?= number_format($produto['preco'], 2) ?></td>
+                <td>
+                    <a href="/atualizar?acao=decrementar&codigo=<?= $produto['cod'] ?>" class="botao-diminuir">-</a>
+                    <?= $produto['quantidade'] ?>
+                    <a href="/atualizar?acao=incrementar&codigo=<?= $produto['cod'] ?>" class="botao-acrescentar">+</a>
+                </td>
+                <td>
+                    <a href="/remover?remover=<?= $produto['cod'] ?>" class="botao-remover">remover</a>
+                </td>
+
+                <?if($id == 0){?>
+                    <td>R$<?= number_format($this->view->subtotal, 2) ?></td>
+                <?}?>
+            </tr>
+
+        <?}?>
+    
+    </tbody>
+</table>
+
+<button type="button" class="botao-concluir-compra">Finalizar Compra</button>

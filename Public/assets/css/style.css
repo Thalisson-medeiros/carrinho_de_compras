@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carrinho{
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    color: #fff;
+    background-color: rgba(25, 25, 124, 0.493);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.produtos-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.produto {
+    height: 100px;
+    width: 200px;
+    color: #fff;
+    background-color: rgb(31, 114, 31);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.produto > a {
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+}
+/* ----------------------------------produtos */
+
+.tabela-produtos {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid rgb(184, 184, 248);
+    text-align: center;
+}
+
+td {
+    height: 40px;
+}
+
+.botao-diminuir, .botao-acrescentar {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    color: rgb(81, 81, 247);
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    margin: 0px 10px;
+    border: 1px solid rgb(81, 81, 247);
+}
+
+.botao-remover {
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid rgb(81, 81, 247);
+}
+
+.botao-concluir-compra:hover, .botao-remover:hover, .botao-diminuir:hover, .botao-acrescentar:hover {
+    color: #fff;
+    background-color: rgb(81, 81, 247);
+}
+
+.botao-concluir-compra {
+    height: 50px;
+    width: 150px;
+    border: 1px solid rgb(81, 81, 247);
+    background-color: transparent;
+    margin: 0px auto;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}

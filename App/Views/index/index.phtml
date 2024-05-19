@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+
+<?php 
+    if(isset($_GET['resposta'])){
+        echo $_GET['resposta'];
+    }
+
+    // echo '<pre>';
+    // print_r($this->view->produtos);
+    // echo '</pre>';
+
+?>
+
+<body>
+    <a class="carrinho" href="/tabelaProdutos">
+        <small>carrinho</small>
+        <small>0</small>
+    </a>
+
+    <hr>
+
+    <section class="produtos-container">
+        
+        <?foreach($this->view->produtos as $id => $produto){?>
+            <div class="produto">
+                <h2><?= $produto['nome'] ?></h2>
+                <small><?= number_format($produto['preco'], 2) ?></small>
+                <a href="/adicionar?codigo=<?= $produto['cod'] ?>">adicionar ao carrinho</a>
+            </div>
+        <?}?>
+
+    </section>
+</body>
+</html>
